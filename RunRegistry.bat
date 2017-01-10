@@ -23,7 +23,7 @@ IF not "%2"=="" SET Root_Loc=%2
 
 SET Local_Modules_Loc=%Root_Loc%\modules-local
 SET Ext_Modules_Loc=%Root_Loc%\modules-ext
-SET Registry=..\build\bin\Registry_win32.exe
+SET Registry=..\build\bin\Registry.exe
 SET Output_Loc=..\build\types-files
 SET FAST_Loc=%Local_Modules_Loc%\fast-library\src
 SET ED_Loc=%Local_Modules_Loc%\elastodyn\src

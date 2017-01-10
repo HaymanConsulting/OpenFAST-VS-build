@@ -70,25 +70,29 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\build\bin\</OutDir>
     <TargetName>MAP_$(PlatformName)</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\build\types-files</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>MAP_$(PlatformName)</TargetName>
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\build\bin\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\build\types-files</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\build\bin\</OutDir>
     <TargetName>MAP_$(PlatformName)</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\build\types-files</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>MAP_$(PlatformName)</TargetName>
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\build\bin\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\build\types-files</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -193,6 +197,7 @@
     <ClInclude Include="..\..\OpenFAST\modules-ext\map\src\maperror.h" />
     <ClInclude Include="..\..\OpenFAST\modules-ext\map\src\mapinit.h" />
     <ClInclude Include="..\..\OpenFAST\modules-ext\map\src\mapsys.h" />
+    <ClInclude Include=".\WinSock2.h" />
     <ClInclude Include="..\build\types-files\MAP_Types.h" />
     <ClInclude Include="..\..\OpenFAST\modules-ext\map\src\numeric.h" />
     <ClInclude Include="..\..\OpenFAST\modules-ext\map\src\outputstream.h" />
@@ -202,8 +207,17 @@
   <ItemGroup>
     <CustomBuild Include="..\..\OpenFAST\modules-ext\map\src\MAP_Registry.txt">
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CALL ..\RunRegistry.bat MAP</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\build\types-files\MAP_Types.f90</Outputs>
-      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</TreatOutputAsContent>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\build\types-files\MAP_Types.h</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</TreatOutputAsContent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CALL ..\RunRegistry.bat MAP</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\build\types-files\MAP_Types.h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CALL ..\RunRegistry.bat MAP</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\build\types-files\MAP_Types.h</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CALL ..\RunRegistry.bat MAP</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\build\types-files\MAP_Types.h</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</TreatOutputAsContent>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
