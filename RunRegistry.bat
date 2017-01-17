@@ -99,6 +99,7 @@ GOTO checkError
 :IfW_BladedFFWind
 :IfW_UserWind
 :IfW_UniformWind
+:IfW_4Dext
 SET CURR_LOC=%IfW_Loc%
 %REGISTRY% "%CURR_LOC%\%ModuleName%.txt" -I "%NWTC_Lib_Loc%" -I "%CURR_LOC%" -noextrap  -O "%Output_Loc%"
 GOTO checkError

@@ -638,6 +638,27 @@
 			<FileConfiguration Name="Release_Matlab|Win32">
 				<Tool Name="VFCustomBuildTool" CommandLine="CALL ..\RunRegistry.bat IfW_UserWind" Description="Running Registry for IfW_UserWind" Outputs="..\build\types-files\IfW_UserWind_Types.f90"/></FileConfiguration></File>
 		<File RelativePath="..\build\types-files\IfW_UserWind_Types.f90"/>
+      
+      <File RelativePath="..\..\OpenFAST\modules-local\inflowwind\src\IfW_4Dext.txt">
+			<FileConfiguration Name="Debug|Win32">
+				<Tool Name="VFCustomBuildTool" CommandLine="CALL RunRegistry.bat IfW_4Dext" Description="Running Registry for IfW_4Dext" Outputs="..\build\types-files\IfW_4Dext_Types.f90"/></FileConfiguration>
+			<FileConfiguration Name="Release|x64">
+				<Tool Name="VFCustomBuildTool" CommandLine="CALL RunRegistry.bat IfW_4Dext" Description="Running Registry for IfW_4Dext" Outputs="..\build\types-files\IfW_4Dext_Types.f90"/></FileConfiguration>
+			<FileConfiguration Name="Debug|x64">
+				<Tool Name="VFCustomBuildTool" CommandLine="CALL RunRegistry.bat IfW_4Dext" Description="Running Registry for IfW_4Dext" Outputs="..\build\types-files\IfW_4Dext_Types.f90"/></FileConfiguration>
+			<FileConfiguration Name="Debug_Matlab|x64">
+				<Tool Name="VFCustomBuildTool" CommandLine="CALL RunRegistry.bat IfW_4Dext" Description="Running Registry for IfW_4Dext" Outputs="..\build\types-files\IfW_4Dext_Types.f90"/></FileConfiguration>
+			<FileConfiguration Name="Debug_Matlab|Win32">
+				<Tool Name="VFCustomBuildTool" CommandLine="CALL RunRegistry.bat IfW_4Dext" Description="Running Registry for IfW_4Dext" Outputs="..\build\types-files\IfW_4Dext_Types.f90"/></FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+				<Tool Name="VFCustomBuildTool" CommandLine="CALL RunRegistry.bat IfW_4Dext" Description="Running Registry for IfW_4Dext" Outputs="..\build\types-files\IfW_4Dext_Types.f90"/></FileConfiguration>
+			<FileConfiguration Name="Release_Matlab|x64">
+				<Tool Name="VFCustomBuildTool" CommandLine="CALL RunRegistry.bat IfW_4Dext" Description="Running Registry for IfW_4Dext" Outputs="..\build\types-files\IfW_4Dext_Types.f90"/></FileConfiguration>
+			<FileConfiguration Name="Release_Matlab|Win32">
+				<Tool Name="VFCustomBuildTool" CommandLine="CALL RunRegistry.bat IfW_4Dext" Description="Running Registry for IfW_4Dext" Outputs="..\build\types-files\IfW_4Dext_Types.f90"/></FileConfiguration></File>
+		<File RelativePath="..\build\types-files\IfW_4Dext_Types.f90"/>
+      
+      
 		<File RelativePath="..\..\OpenFAST\modules-local\inflowwind\src\InflowWind.txt">
 			<FileConfiguration Name="Debug|Win32">
 				<Tool Name="VFCustomBuildTool" CommandLine="CALL ..\RunRegistry.bat InflowWind" Description="Running Registry for InflowWind" Outputs="..\build\types-files\InflowWind_Types.f90" AdditionalDependencies="..\..\OpenFAST\modules-local\inflowwind\src\Reg-IfW_FFWind.txt;..\..\OpenFAST\modules-local\inflowwind\src\Reg-IfW_HHWind.txt"/></FileConfiguration>
