@@ -59,6 +59,12 @@ GOTO %ModuleName%
 REM ----------------------------------------------------------------------------
 REM ---------------- RUN THE REGISTRY TO AUTO-GENERATE FILES -------------------
 REM ----------------------------------------------------------------------------
+:MAP
+SET CURR_LOC=%MAP_Loc_R%
+%REGISTRY% "%CURR_LOC%\%ModuleName%_Registry.txt"  -ccode -I "%NWTC_Lib_Loc%"  -I "%CURR_LOC%" -O "%Output_Loc%"
+REM %REGISTRY% "%CURR_LOC%\%ModuleName%_Registry.txt"  -I "%NWTC_Lib_Loc%"  -I "%CURR_LOC%" -O "%Output_Loc%"
+GOTO checkError
+
 :FAST
 ECHO on
 SET CURR_LOC=%FAST_Loc%
@@ -95,9 +101,25 @@ GOTO checkError
 
 
 :IfW_TSFFWind
+SET CURR_LOC=%IfW_Loc%
+%REGISTRY% "%CURR_LOC%\%ModuleName%.txt" -I "%NWTC_Lib_Loc%" -I "%CURR_LOC%" -noextrap  -O "%Output_Loc%"
+GOTO checkError
+
 :IfW_HAWCWind
+SET CURR_LOC=%IfW_Loc%
+%REGISTRY% "%CURR_LOC%\%ModuleName%.txt" -I "%NWTC_Lib_Loc%" -I "%CURR_LOC%" -noextrap  -O "%Output_Loc%"
+GOTO checkError
+
 :IfW_BladedFFWind
+SET CURR_LOC=%IfW_Loc%
+%REGISTRY% "%CURR_LOC%\%ModuleName%.txt" -I "%NWTC_Lib_Loc%" -I "%CURR_LOC%" -noextrap  -O "%Output_Loc%"
+GOTO checkError
+
 :IfW_UserWind
+SET CURR_LOC=%IfW_Loc%
+%REGISTRY% "%CURR_LOC%\%ModuleName%.txt" -I "%NWTC_Lib_Loc%" -I "%CURR_LOC%" -noextrap  -O "%Output_Loc%"
+GOTO checkError
+
 :IfW_UniformWind
 SET CURR_LOC=%IfW_Loc%
 %REGISTRY% "%CURR_LOC%\%ModuleName%.txt" -I "%NWTC_Lib_Loc%" -I "%CURR_LOC%" -noextrap  -O "%Output_Loc%"
@@ -155,13 +177,6 @@ GOTO checkError
 :SubDyn
 SET CURR_LOC=%SD_Loc%
 %REGISTRY% "%CURR_LOC%\%ModuleName%_Registry.txt" -I "%NWTC_Lib_Loc%"  -O "%Output_Loc%"
-GOTO checkError
-
-:MAP
-SET CURR_LOC=%MAP_Loc_R%
-%REGISTRY% "%CURR_LOC%\%ModuleName%_Registry.txt"  -ccode -I "%NWTC_Lib_Loc%"  -I "%CURR_LOC%" -O "%Output_Loc%"
-REM %REGISTRY% "%CURR_LOC%\%ModuleName%_Registry.txt"  -I "%NWTC_Lib_Loc%"  -I "%CURR_LOC%" -O "%Output_Loc%"
-
 GOTO checkError
 
 :FEAMooring
