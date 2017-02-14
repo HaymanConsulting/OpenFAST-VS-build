@@ -1,0 +1,14 @@
+*.u2d
+*.suo
+*.sdf
+*.opensdf
+*.obj
+*.pdb
+*.user
+*.log
+*.tlog
+*.lastbuildstate
+*.idb
+*.htm
+*.mod
+/FASTlib/Debug/*.f90
